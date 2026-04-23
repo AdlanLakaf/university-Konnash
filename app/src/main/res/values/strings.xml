@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">كناش</string>
+    <string name="app_name">Konnash</string>
 
     <!-- Language Screen -->
     <string name="select_language">اختر اللغة</string>
