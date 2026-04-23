@@ -67,10 +67,10 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
          */
         if (isIncome) {
             holder.layoutIcon.setBackgroundResource(R.drawable.bg_income_icon);
-            holder.ivTypeIcon.setImageResource(R.drawable.ic_plus_placeholder);
+            holder.ivTypeIcon.setImageResource(R.drawable.plus);
         } else {
             holder.layoutIcon.setBackgroundResource(R.drawable.bg_expense_icon);
-            holder.ivTypeIcon.setImageResource(R.drawable.ic_minus_placeholder);
+            holder.ivTypeIcon.setImageResource(R.drawable.minus);
         }
 
         // Separator line for all but last item

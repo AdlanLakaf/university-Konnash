@@ -125,15 +125,23 @@ public class CashBookFragment extends Fragment {
         double expense = db.getTotalExpense();
         double balance = income - expense;
 
-        tvBalance.setText(DateUtils.formatAmount(balance));
+        tvBalance.setText(DateUtils.formatAmount(Math.abs(balance)));
+        
+        if (expense > income) {
+            tvBalance.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.expense_red));
+        } else {
+            tvBalance.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.income_green));
+        }
+
         tvTotalIncome.setText("الدخل: " + DateUtils.formatAmount(income));
         tvTotalExpense.setText("المصروف: " + DateUtils.formatAmount(expense));
-        tvTransactionsCount.setText("المعاملات (" + transactions.size() + ")");
 
         // Reload list
         transactions.clear();
         transactions.addAll(db.getAllTransactions());
         if (adapter != null) adapter.notifyDataSetChanged();
+        
+        tvTransactionsCount.setText("المعاملات (" + transactions.size() + ")");
     }
 
     // ─── Navigation ────────────────────────────────────────

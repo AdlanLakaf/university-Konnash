@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Brand Colors -->
-    <color name="primary_blue">#2D9CDB</color>
+    <color name="primary_blue">#2894FF</color>
     <color name="primary_blue_dark">#1A7AB8</color>
     <color name="primary_blue_light">#E8F4FD</color>
 
     <!-- Income / Expense -->
-    <color name="income_green">#27AE60</color>
-    <color name="income_green_light">#E8F8F0</color>
+    <color name="income_green">#177326</color>
+    <color name="income_green_light">#C9ECCC</color>
     <color name="expense_red">#EB5757</color>
     <color name="expense_red_light">#FFF0F0</color>
-    <color name="expense_dark">#3D0026</color>
+    <color name="expense_dark">#F5E5E6</color>
 
     <!-- Neutral -->
     <color name="white">#FFFFFF</color>
-    <color name="background">#F5F7FA</color>
+    <color name="background">#FFFFFF</color>
     <color name="card_bg">#FFFFFF</color>
     <color name="text_primary">#1A1A2E</color>
-    <color name="text_secondary">#888888</color>
+    <color name="text_secondary">#7e9cb4</color>
     <color name="text_hint">#BBBBBB</color>
     <color name="divider">#F0F0F0</color>
     <color name="border">#E0E0E0</color>
@@ -31,9 +31,9 @@
     <color name="button_primary_light">#EBF6FF</color>
 
     <!-- Calculator keys -->
-    <color name="calc_key_bg">#EDF2FF</color>
+    <color name="calc_key_bg">#ffffff</color>
     <color name="calc_key_text">#2D9CDB</color>
-    <color name="calc_operator_bg">#D9E8FF</color>
+    <color name="calc_operator_bg">#E1F3FD</color>
 
     <!-- Onboarding dots -->
     <color name="dot_active">#2D9CDB</color>

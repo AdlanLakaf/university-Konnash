@@ -16,42 +16,45 @@
 
         <!-- Quick actions -->
         <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true">
 
-            <!--
-                [IMAGE PLACEHOLDER]
-                ic_youtube, ic_eye_off, ic_share  — 40x40dp blue rounded square buttons
-                Reference: Image 4 top bar
-            -->
             <ImageButton
                 android:id="@+id/btn_youtube_main"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_youtube_placeholder"
+                android:src="@drawable/share_icon"
                 android:background="@drawable/bg_quick_action"
-                android:layout_marginEnd="6dp"
-                android:contentDescription="youtube" />
+                android:scaleType="centerInside"
+                android:padding="10dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="share" />
 
             <ImageButton
                 android:id="@+id/btn_hide"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_eye_placeholder"
+                android:src="@drawable/hide_icon"
                 android:background="@drawable/bg_quick_action"
-                android:layout_marginEnd="6dp"
+                android:scaleType="centerInside"
+                android:padding="10dp"
+                android:layout_marginEnd="8dp"
                 android:contentDescription="hide balance" />
 
             <ImageButton
                 android:id="@+id/btn_share_main"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_share_placeholder"
+                android:src="@drawable/youtube"
                 android:background="@drawable/bg_quick_action"
-                android:contentDescription="share" />
+                android:scaleType="centerInside"
+                android:padding="10dp"
+                android:contentDescription="youtube" />
+
         </LinearLayout>
 
         <!-- Merchant -->
@@ -66,7 +69,7 @@
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:src="@drawable/ic_book_placeholder"
+                android:src="@drawable/info_icon"
                 android:contentDescription="book" />
 
             <TextView
@@ -94,10 +97,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/balance"
-            android:textSize="14sp"
+            android:textSize="22sp"
             android:textColor="@color/primary_blue"
             android:fontFamily="@font/cairo_semibold"
-            android:gravity="end" />
+            android:gravity="start" />
 
         <!-- Balance amount -->
         <TextView
@@ -108,7 +111,7 @@
             android:textSize="34sp"
             android:textColor="@color/expense_red"
             android:fontFamily="@font/cairo_bold"
-            android:gravity="end"
+            android:gravity="start"
             android:layout_marginTop="4dp" />
 
         <!-- Income row -->
@@ -120,7 +123,7 @@
             android:textSize="13sp"
             android:textColor="@color/income_green"
             android:fontFamily="@font/cairo"
-            android:gravity="end"
+            android:gravity="start"
             android:layout_marginTop="8dp" />
 
         <!-- Expense row -->
@@ -132,7 +135,7 @@
             android:textSize="13sp"
             android:textColor="@color/expense_red"
             android:fontFamily="@font/cairo"
-            android:gravity="end"
+            android:gravity="start"
             android:layout_marginTop="2dp" />
 
         <!-- Action buttons -->
@@ -141,17 +144,20 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="16dp">
+            <Button
+                android:id="@+id/btn_income"
+                style="@style/ButtonIncome"
+                android:text="@string/btn_income"
+                android:layout_marginEnd="8dp"
+                />
 
             <Button
                 android:id="@+id/btn_expense"
                 style="@style/ButtonExpense"
                 android:text="@string/btn_expense"
-                android:layout_marginEnd="8dp" />
+                />
 
-            <Button
-                android:id="@+id/btn_income"
-                style="@style/ButtonIncome"
-                android:text="@string/btn_income" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -172,8 +178,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="@drawable/bg_quick_action"
-            android:padding="12dp"
             android:layout_marginEnd="6dp">
 
             <!--
@@ -181,9 +185,11 @@
                 ic_archive: inbox/archive box icon (24dp, blue)
             -->
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_archive_placeholder"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_quick_action"
+                android:padding="12dp"
+                android:src="@drawable/archive_icon"
                 android:contentDescription="archive" />
 
             <TextView
@@ -204,8 +210,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="@drawable/bg_quick_action"
-            android:padding="12dp"
             android:layout_marginEnd="6dp">
 
             <!--
@@ -213,9 +217,11 @@
                 ic_reports: bar chart icon (24dp, blue)
             -->
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_reports_placeholder"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_quick_action"
+                android:padding="12dp"
+                android:src="@drawable/analytics_icon"
                 android:contentDescription="reports" />
 
             <TextView
@@ -235,18 +241,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            android:background="@drawable/bg_quick_action"
-            android:padding="12dp">
+            android:gravity="center">
 
             <!--
                 [IMAGE PLACEHOLDER]
                 ic_end: download/inbox out icon (24dp, blue)
             -->
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_end_placeholder"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_quick_action"
+                android:padding="12dp"
+                android:src="@drawable/finish_icon"
                 android:contentDescription="close" />
 
             <TextView
@@ -269,7 +275,7 @@
         android:textSize="15sp"
         android:textColor="@color/primary_blue"
         android:fontFamily="@font/cairo_semibold"
-        android:gravity="end"
+        android:gravity="start"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingBottom="4dp" />
