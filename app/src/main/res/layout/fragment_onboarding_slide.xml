@@ -39,7 +39,7 @@
             style="@style/TextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp" />
+             />
 
         <TextView
             android:id="@+id/tv_slide_desc"
@@ -47,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:textColor="#7e9cb4" />
+            android:textColor="#7e9cb4"
+            android:textSize="22sp" />
 
     </LinearLayout>
 
