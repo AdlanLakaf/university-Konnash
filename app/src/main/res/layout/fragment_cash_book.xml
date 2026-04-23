@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layoutDirection="rtl">
+
+    <!-- Top bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Quick actions -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_youtube, ic_eye_off, ic_share  — 40x40dp blue rounded square buttons
+                Reference: Image 4 top bar
+            -->
+            <ImageButton
+                android:id="@+id/btn_youtube_main"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_youtube_placeholder"
+                android:background="@drawable/bg_quick_action"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="youtube" />
+
+            <ImageButton
+                android:id="@+id/btn_hide"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_eye_placeholder"
+                android:background="@drawable/bg_quick_action"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="hide balance" />
+
+            <ImageButton
+                android:id="@+id/btn_share_main"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_share_placeholder"
+                android:background="@drawable/bg_quick_action"
+                android:contentDescription="share" />
+        </LinearLayout>
+
+        <!-- Merchant -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_book_placeholder"
+                android:contentDescription="book" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/merchant"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Balance Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="16dp"
+        android:layout_margin="12dp">
+
+        <!-- Balance label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/balance"
+            android:textSize="14sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo_semibold"
+            android:gravity="end" />
+
+        <!-- Balance amount -->
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0.0 د.ج."
+            android:textSize="34sp"
+            android:textColor="@color/expense_red"
+            android:fontFamily="@font/cairo_bold"
+            android:gravity="end"
+            android:layout_marginTop="4dp" />
+
+        <!-- Income row -->
+        <TextView
+            android:id="@+id/tv_total_income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الدخل: 0.0 د.ج."
+            android:textSize="13sp"
+            android:textColor="@color/income_green"
+            android:fontFamily="@font/cairo"
+            android:gravity="end"
+            android:layout_marginTop="8dp" />
+
+        <!-- Expense row -->
+        <TextView
+            android:id="@+id/tv_total_expense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="المصروف: 0.0 د.ج."
+            android:textSize="13sp"
+            android:textColor="@color/expense_red"
+            android:fontFamily="@font/cairo"
+            android:gravity="end"
+            android:layout_marginTop="2dp" />
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btn_expense"
+                style="@style/ButtonExpense"
+                android:text="@string/btn_expense"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_income"
+                style="@style/ButtonIncome"
+                android:text="@string/btn_income" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Quick Actions Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp">
+
+        <!-- Archive -->
+        <LinearLayout
+            android:id="@+id/btn_archive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_quick_action"
+            android:padding="12dp"
+            android:layout_marginEnd="6dp">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_archive: inbox/archive box icon (24dp, blue)
+            -->
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_archive_placeholder"
+                android:contentDescription="archive" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/archive"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Reports -->
+        <LinearLayout
+            android:id="@+id/btn_reports"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_quick_action"
+            android:padding="12dp"
+            android:layout_marginEnd="6dp">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_reports: bar chart icon (24dp, blue)
+            -->
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_reports_placeholder"
+                android:contentDescription="reports" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reports"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Close/End -->
+        <LinearLayout
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_quick_action"
+            android:padding="12dp">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_end: download/inbox out icon (24dp, blue)
+            -->
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_end_placeholder"
+                android:contentDescription="close" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Transactions label -->
+    <TextView
+        android:id="@+id/tv_transactions_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="المعاملات (0)"
+        android:textSize="15sp"
+        android:textColor="@color/primary_blue"
+        android:fontFamily="@font/cairo_semibold"
+        android:gravity="end"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp" />
+
+    <!-- Transactions RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_transactions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
+
+</LinearLayout>

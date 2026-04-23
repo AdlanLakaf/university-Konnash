@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="card_radius">16dp</dimen>
+    <dimen name="button_radius">12dp</dimen>
+    <dimen name="small_radius">8dp</dimen>
+    <dimen name="icon_size_sm">24dp</dimen>
+    <dimen name="icon_size_md">40dp</dimen>
+    <dimen name="icon_size_lg">56dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="calc_key_height">64dp</dimen>
+    <dimen name="onboarding_image_height">300dp</dimen>
+</resources>

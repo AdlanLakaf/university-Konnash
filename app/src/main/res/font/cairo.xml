@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    [FONT PLACEHOLDER]
+    Download Cairo font from Google Fonts: https://fonts.google.com/specimen/Cairo
+    Place the following TTF files in res/font/:
+      cairo.ttf          (Regular  400)
+      cairo_semibold.ttf (SemiBold 600)
+      cairo_bold.ttf     (Bold     700)
+
+    Then replace this file with the actual font reference or use the font directly.
+    Alternatively use: android:fontFamily="@font/cairo" after adding the TTF.
+-->
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        app:fontStyle="normal"
+        app:fontWeight="400"
+        app:font="@font/cairo_regular" />
+    <font
+        app:fontStyle="normal"
+        app:fontWeight="600"
+        app:font="@font/cairo_semibold" />
+    <font
+        app:fontStyle="normal"
+        app:fontWeight="700"
+        app:font="@font/cairo_bold" />
+</font-family>

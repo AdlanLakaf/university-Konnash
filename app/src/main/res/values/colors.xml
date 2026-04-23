@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Brand Colors -->
+    <color name="primary_blue">#2D9CDB</color>
+    <color name="primary_blue_dark">#1A7AB8</color>
+    <color name="primary_blue_light">#E8F4FD</color>
+
+    <!-- Income / Expense -->
+    <color name="income_green">#27AE60</color>
+    <color name="income_green_light">#E8F8F0</color>
+    <color name="expense_red">#EB5757</color>
+    <color name="expense_red_light">#FFF0F0</color>
+    <color name="expense_dark">#3D0026</color>
+
+    <!-- Neutral -->
+    <color name="white">#FFFFFF</color>
+    <color name="background">#F5F7FA</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#888888</color>
+    <color name="text_hint">#BBBBBB</color>
+    <color name="divider">#F0F0F0</color>
+    <color name="border">#E0E0E0</color>
+
+    <!-- Bottom nav -->
+    <color name="nav_selected">#2D9CDB</color>
+    <color name="nav_unselected">#AAAAAA</color>
+
+    <!-- Button states -->
+    <color name="button_disabled">#CCCCCC</color>
+    <color name="button_primary_light">#EBF6FF</color>
+
+    <!-- Calculator keys -->
+    <color name="calc_key_bg">#EDF2FF</color>
+    <color name="calc_key_text">#2D9CDB</color>
+    <color name="calc_operator_bg">#D9E8FF</color>
+
+    <!-- Onboarding dots -->
+    <color name="dot_active">#2D9CDB</color>
+    <color name="dot_inactive">#C4D8EE</color>
+
+    <!-- Yellow accent -->
+    <color name="yellow_accent">#F2994A</color>
 </resources>

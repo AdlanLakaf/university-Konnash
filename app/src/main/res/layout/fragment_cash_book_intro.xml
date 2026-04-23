@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layoutDirection="rtl">
+
+    <!-- Top bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Quick action buttons (YouTube, share) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_youtube: YouTube play icon (red) in blue rounded square button
+                ic_share: share/screen icon in blue rounded square button
+            -->
+            <ImageButton
+                android:id="@+id/btn_youtube"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_youtube_placeholder"
+                android:background="@drawable/bg_quick_action"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="youtube" />
+
+            <ImageButton
+                android:id="@+id/btn_share"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_share_placeholder"
+                android:background="@drawable/bg_quick_action"
+                android:contentDescription="share" />
+        </LinearLayout>
+
+        <!-- Merchant info (right side in RTL = left visual) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_book_open: open book/notebook icon (28dp)
+            -->
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_book_placeholder"
+                android:contentDescription="book" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/merchant"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Center content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!--
+            [IMAGE PLACEHOLDER]
+            ic_cash_book_empty: The 3D book illustration with coins, truck, +/- icons
+            Size: 200x200dp  — Reference: Image 2 (center illustration)
+        -->
+        <ImageView
+            android:id="@+id/iv_empty_illustration"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_cashbook_empty_placeholder"
+            android:contentDescription="empty cash book" />
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_cash_book"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="@font/cairo"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <!-- 👇 pointing hand emoji or icon -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👇"
+            android:textSize="28sp"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+
+    <!-- Income / Expense buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btn_expense_intro"
+            style="@style/ButtonExpense"
+            android:text="@string/expense"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_income_intro"
+            style="@style/ButtonIncome"
+            android:text="@string/income" />
+
+    </LinearLayout>
+
+</LinearLayout>

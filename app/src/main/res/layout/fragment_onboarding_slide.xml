@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:layoutDirection="rtl">
+
+    <!--
+        [IMAGE PLACEHOLDER]
+        Each slide has a different illustration:
+        Slide 1: ic_onboarding_welcome  → merchant illustration (Image 8)
+        Slide 2: ic_onboarding_debts    → two hands with phone showing payments (Image 7)
+        Slide 3: ic_onboarding_clients  → phone with client list (Image 12)
+        Slide 4: ic_onboarding_remind   → whatsapp notification reminder (Image 13)
+        Slide 5: ic_onboarding_photo    → hand with phone showing receipt (Image 6)
+        All images should be ~280dp tall, placed in /res/drawable/
+    -->
+    <ImageView
+        android:id="@+id/iv_slide_image"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="onboarding illustration" />
+
+    <TextView
+        android:id="@+id/tv_slide_title"
+        style="@style/TextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_slide_desc"
+        style="@style/TextBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

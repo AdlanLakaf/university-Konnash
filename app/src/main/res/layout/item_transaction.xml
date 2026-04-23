@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layoutDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Type icon bubble -->
+        <LinearLayout
+            android:id="@+id/layout_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_expense_icon"
+            android:gravity="center"
+            android:layout_marginStart="12dp">
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_plus_placeholder  → white "+" VectorDrawable  (20dp)
+                ic_minus_placeholder → white "−" VectorDrawable  (20dp)
+            -->
+            <ImageView
+                android:id="@+id/iv_type_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_minus_placeholder"
+                android:contentDescription="type icon" />
+        </LinearLayout>
+
+        <!-- Label + balance after -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/tv_type_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مصروف"
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/cairo_semibold" />
+
+            <TextView
+                android:id="@+id/tv_balance_after"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الرصيد 0.0 د.ج."
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- Amount + time -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="555.0 د.ج."
+                android:textSize="15sp"
+                android:textColor="@color/expense_red"
+                android:fontFamily="@font/cairo_semibold" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اليوم ساعة 11:45"
+                android:textSize="11sp"
+                android:textColor="@color/text_hint"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Bottom divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
+
+</LinearLayout>

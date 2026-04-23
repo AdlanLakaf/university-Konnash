@@ -1,5 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Konnash" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Konnash" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryDark">@color/primary_blue_dark</item>
+        <item name="colorAccent">@color/primary_blue</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:fontFamily">@font/cairo</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:textDirection">rtl</item>
+    </style>
+
+    <style name="Theme.Konnash.Splash" parent="Theme.Konnash">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="ButtonPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/cairo_semibold</item>
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ButtonIncome">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/income_green</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/cairo_semibold</item>
+        <item name="android:background">@drawable/bg_button_income</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ButtonExpense">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/cairo_semibold</item>
+        <item name="android:background">@drawable/bg_button_expense</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Calculator key style -->
+    <style name="CalcKey">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/cairo</item>
+        <item name="android:background">@drawable/bg_calc_key</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CalcKeyOperator" parent="CalcKey">
+        <item name="android:background">@drawable/bg_calc_operator</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TextTitle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:fontFamily">@font/cairo_bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/cairo</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <!-- Language Button -->
+    <style name="LanguageButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/cairo_semibold</item>
+        <item name="android:background">@drawable/bg_language_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
+    <style name="LanguageButtonSelected" parent="LanguageButton">
+        <item name="android:background">@drawable/bg_language_button_selected</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

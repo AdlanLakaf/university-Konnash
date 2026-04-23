@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="@dimen/screen_padding"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_phone"
+        android:textSize="22sp"
+        android:textColor="@color/primary_blue"
+        android:fontFamily="@font/cairo_bold"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginTop="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="36dp"
+        android:gravity="center_vertical">
+
+        <!-- Country flag + code -->
+        <LinearLayout
+            android:id="@+id/layout_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingEnd="12dp">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_flag_dz: Algerian flag icon (32x22dp)
+                Place in res/drawable/ic_flag_dz.xml or ic_flag_dz.png
+            -->
+            <ImageView
+                android:id="@+id/iv_flag"
+                android:layout_width="32dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_flag_placeholder"
+                android:contentDescription="flag" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@android:drawable/arrow_down_float"
+                android:layout_marginStart="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+213"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/cairo"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="32dp"
+            android:background="@color/border" />
+
+        <!-- Phone number field -->
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/phone_hint"
+            android:inputType="phone"
+            android:background="@null"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/cairo"
+            android:paddingStart="12dp"
+            android:textAlignment="textEnd" />
+    </LinearLayout>
+
+    <!-- Bottom underline -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/primary_blue"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_desc"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:fontFamily="@font/cairo"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginTop="24dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Continue button -->
+    <Button
+        android:id="@+id/btn_continue"
+        style="@style/ButtonPrimary"
+        android:text="@string/btn_continue"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Terms text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agree_text"
+        android:textSize="11sp"
+        android:textColor="@color/text_hint"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:id="@+id/tv_privacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy"
+            android:textSize="12sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" , "
+            android:textSize="12sp"
+            android:textColor="@color/text_hint" />
+
+        <TextView
+            android:id="@+id/tv_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_of_use"
+            android:textSize="12sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo" />
+    </LinearLayout>
+
+</LinearLayout>

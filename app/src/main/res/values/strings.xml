@@ -1,3 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Konnash</string>
+    <string name="app_name">كناش</string>
+
+    <!-- Language Screen -->
+    <string name="select_language">اختر اللغة</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="french">Français</string>
+    <string name="turkish">Turkish</string>
+    <string name="confirm">تأكيد</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">مرحبا بك في كناش</string>
+    <string name="onboarding_desc_1">دفتر لتسهيل تسجيل و تسيير الديون الممنوحة للعملاء و الممونين. من أي هاتف و في أي مكان</string>
+    <string name="onboarding_title_2">كل ديون و مدفوعات العملاء بين يديك</string>
+    <string name="onboarding_desc_2">كل ديون و مدفوعات العملاء بين يديك في أي وقت بدون الحاجة لسجل الديون.</string>
+    <string name="onboarding_title_3">حساب مفصل لجميع العملاء</string>
+    <string name="onboarding_desc_3">حساب مفصل لجميع العملاء</string>
+    <string name="onboarding_title_4">تذكير بالدفع تلقائي و مجاني عبر الواتساب</string>
+    <string name="onboarding_desc_4">تذكير بالدفع تلقائي و مجاني عبر الواتساب</string>
+    <string name="onboarding_title_5">إمكانية إضافة ملاحظة و صورة البضاعة أو الفاتورة</string>
+    <string name="onboarding_desc_5">إمكانية إضافة ملاحظة و صورة البضاعة أو الفاتورة لكل معاملة</string>
+    <string name="btn_start">إبدأ</string>
+
+    <!-- Phone Screen -->
+    <string name="enter_phone">المرجو إدخال رقم الهاتف</string>
+    <string name="phone_hint">رقم الهاتف</string>
+    <string name="phone_desc">يسمح لك رقم الهاتف بالولوج بأمان إلى حسابك الخاص من أي هاتف و من أي مكان.</string>
+    <string name="btn_continue">مواصلة</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="terms_of_use">شروط الاستعمال</string>
+    <string name="agree_text">بالنقر على متابعة، فانك تقر بانك قد قرأت و قبلت ما يلي من</string>
+
+    <!-- Cash Book Onboarding -->
+    <string name="cash_book_title">سجل تحركاتك النقدية بسلاسة</string>
+    <string name="cash_feature_1">تابع النقد الداخل والخارج</string>
+    <string name="cash_feature_2">قم بتعيين فئة لكل حركة</string>
+    <string name="cash_feature_3">أنشئ تقارير نقدية مفصلة</string>
+    <string name="btn_continue_cash">استمرار</string>
+
+    <!-- Cash Book Main -->
+    <string name="balance">الرصيد</string>
+    <string name="income_label">الدخل:</string>
+    <string name="expense_label">المصروف:</string>
+    <string name="btn_income">+ دخل</string>
+    <string name="btn_expense">- مصروف</string>
+    <string name="transactions_title">المعاملات</string>
+    <string name="archive">أرشيف المعاملات</string>
+    <string name="reports">التقارير</string>
+    <string name="close">انهاء</string>
+    <string name="income">دخل</string>
+    <string name="expense">مصروف</string>
+    <string name="currency">د.ج.</string>
+    <string name="today_at">اليوم ساعة</string>
+
+    <!-- Add Transaction -->
+    <string name="add_income">دخل</string>
+    <string name="add_expense">مصروف</string>
+    <string name="btn_confirm">تأكيد</string>
+
+    <!-- Empty State -->
+    <string name="empty_cash_book">هنا يمكنك تسجيل جميع المصروفات و المداخيل اليومية</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_debt_book">دفتر الديون</string>
+    <string name="nav_cash_book">دفتر النقدية</string>
+    <string name="nav_more">المزيد</string>
+
+    <!-- Merchant -->
+    <string name="merchant">تاجر</string>
+
+    <!-- Error messages -->
+    <string name="error_empty_amount">الرجاء إدخال مبلغ</string>
+    <string name="error_invalid_phone">رقم الهاتف غير صحيح</string>
 </resources>

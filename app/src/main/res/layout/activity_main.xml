@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Fragment container -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layoutDirection="rtl">
+
+        <!-- Debt Book Tab -->
+        <LinearLayout
+            android:id="@+id/tab_debt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_debt_book: open book icon (24dp)
+                selected color: @color/nav_selected, unselected: @color/nav_unselected
+            -->
+            <ImageView
+                android:id="@+id/iv_tab_debt"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_book_placeholder"
+                android:contentDescription="debt book" />
+
+            <TextView
+                android:id="@+id/tv_tab_debt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_debt_book"
+                android:textSize="11sp"
+                android:fontFamily="@font/cairo"
+                android:textColor="@color/nav_unselected"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- Cash Book Tab (center, active) -->
+        <LinearLayout
+            android:id="@+id/tab_cash"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_cash_book: wallet/card icon (28dp)
+                active state: blue filled
+            -->
+            <ImageView
+                android:id="@+id/iv_tab_cash"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_cash_placeholder"
+                android:contentDescription="cash book" />
+
+            <TextView
+                android:id="@+id/tv_tab_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_cash_book"
+                android:textSize="11sp"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/primary_blue"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- More Tab -->
+        <LinearLayout
+            android:id="@+id/tab_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!--
+                [IMAGE PLACEHOLDER]
+                ic_grid: 2x2 grid / apps icon (24dp)
+            -->
+            <ImageView
+                android:id="@+id/iv_tab_more"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_grid_placeholder"
+                android:contentDescription="more" />
+
+            <TextView
+                android:id="@+id/tv_tab_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_more"
+                android:textSize="11sp"
+                android:fontFamily="@font/cairo"
+                android:textColor="@color/nav_unselected"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
