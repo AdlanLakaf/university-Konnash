@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
+    android:paddingHorizontal="24dp"
     android:layoutDirection="rtl">
 
     <!--
@@ -20,24 +19,36 @@
     <ImageView
         android:id="@+id/iv_slide_image"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_marginTop="40dp"
         android:scaleType="fitCenter"
         android:contentDescription="onboarding illustration" />
 
-    <TextView
-        android:id="@+id/tv_slide_title"
-        style="@style/TextTitle"
+    <!-- Text block centered between image and bottom dots -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:textSize="22sp" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp">
 
-    <TextView
-        android:id="@+id/tv_slide_desc"
-        style="@style/TextBody"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#7e9cb4" />
+        <TextView
+            android:id="@+id/tv_slide_title"
+            style="@style/TextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_slide_desc"
+            style="@style/TextBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="#7e9cb4" />
+
+    </LinearLayout>
 
 </LinearLayout>

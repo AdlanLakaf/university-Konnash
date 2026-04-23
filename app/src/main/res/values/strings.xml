@@ -11,15 +11,15 @@
     <string name="confirm">تأكيد</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_title_1">مرحبا بك في كناش</string>
+    <string name="onboarding_title_1"><![CDATA[مرحبا بك في <font color="#2979FF"><b>كناش</b></font>]]></string>
     <string name="onboarding_desc_1">دفتر لتسهيل تسجيل و تسيير الديون الممنوحة للعملاء و الممونين. من أي هاتف و في أي مكان</string>
-    <string name="onboarding_title_2">كل ديون و مدفوعات العملاء بين يديك</string>
-    <string name="onboarding_desc_2">كل ديون و مدفوعات العملاء بين يديك في أي وقت بدون الحاجة لسجل الديون.</string>
-    <string name="onboarding_title_3">حساب مفصل لجميع العملاء</string>
-    <string name="onboarding_desc_3">حساب مفصل لجميع العملاء</string>
-    <string name="onboarding_title_4">تذكير بالدفع تلقائي و مجاني عبر الواتساب</string>
-    <string name="onboarding_desc_4">تذكير بالدفع تلقائي و مجاني عبر الواتساب</string>
-    <string name="onboarding_title_5">إمكانية إضافة ملاحظة و صورة البضاعة أو الفاتورة</string>
+    <string name="onboarding_title_2"></string>
+    <string name="onboarding_desc_2"><![CDATA[<font color="#2979FF"><b>كل ديون و مدفوعات</b></font> العملاء بين يديك في أي وقت بدون الحاجة لسجل الديون.]]></string>
+    <string name="onboarding_title_3"></string>
+    <string name="onboarding_desc_3"><![CDATA[<font color="#2979FF"><b>حساب مفصل</b></font> لجميع العملاء]]></string>
+    <string name="onboarding_title_4"></string>
+    <string name="onboarding_desc_4"><![CDATA[<font color="#2979FF"><b>تذكير بالدفع  تلقائي و مجاني</b></font> عبر الواتساب]]></string>
+    <string name="onboarding_title_5"></string>
     <string name="onboarding_desc_5">إمكانية إضافة ملاحظة و صورة البضاعة أو الفاتورة لكل معاملة</string>
     <string name="btn_start">إبدأ</string>
 

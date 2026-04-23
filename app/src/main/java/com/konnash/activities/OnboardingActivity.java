@@ -69,27 +69,27 @@ public class OnboardingActivity extends AppCompatActivity {
         List<OnboardingSlideModel> slides = new ArrayList<>();
 
         slides.add(new OnboardingSlideModel(
-                R.drawable.ic_onboarding_welcome,
+                R.drawable.welcom_page_image_1,
                 getString(R.string.onboarding_title_1),
                 getString(R.string.onboarding_desc_1)));
 
         slides.add(new OnboardingSlideModel(
-                R.drawable.ic_onboarding_debts,
+                R.drawable.welcom_page_image_2,
                 getString(R.string.onboarding_title_2),
                 getString(R.string.onboarding_desc_2)));
 
         slides.add(new OnboardingSlideModel(
-                R.drawable.ic_onboarding_clients,
+                R.drawable.welcom_page_image_3,
                 getString(R.string.onboarding_title_3),
                 getString(R.string.onboarding_desc_3)));
 
         slides.add(new OnboardingSlideModel(
-                R.drawable.ic_onboarding_remind,
+                R.drawable.welcom_page_image_4,
                 getString(R.string.onboarding_title_4),
                 getString(R.string.onboarding_desc_4)));
 
         slides.add(new OnboardingSlideModel(
-                R.drawable.ic_onboarding_photo,
+                R.drawable.welcom_page_image_5,
                 getString(R.string.onboarding_title_5),
                 getString(R.string.onboarding_desc_5)));
 

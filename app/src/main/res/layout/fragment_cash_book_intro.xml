@@ -92,7 +92,7 @@
             android:id="@+id/iv_empty_illustration"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/ic_cashbook_empty_placeholder"
+            android:src="@drawable/main_page_image_2"
             android:contentDescription="empty cash book" />
 
         <TextView

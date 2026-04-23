@@ -34,8 +34,22 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.Sl
     public void onBindViewHolder(@NonNull SlideViewHolder holder, int position) {
         OnboardingSlideModel slide = slides.get(position);
         holder.ivImage.setImageResource(slide.getImageResId());
-        holder.tvTitle.setText(slide.getTitle());
-        holder.tvDesc.setText(slide.getDescription());
+
+        String title = slide.getTitle();
+        if (title == null || title.isEmpty()) {
+            holder.tvTitle.setVisibility(View.GONE);
+        } else {
+            holder.tvTitle.setVisibility(View.VISIBLE);
+            holder.tvTitle.setText(
+                    androidx.core.text.HtmlCompat.fromHtml(
+                            title,
+                            androidx.core.text.HtmlCompat.FROM_HTML_MODE_LEGACY));
+        }
+
+        holder.tvDesc.setText(
+                androidx.core.text.HtmlCompat.fromHtml(
+                        slide.getDescription(),
+                        androidx.core.text.HtmlCompat.FROM_HTML_MODE_LEGACY));
     }
 
     @Override
