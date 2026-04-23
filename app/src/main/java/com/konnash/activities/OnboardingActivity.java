@@ -1,3 +1,6 @@
+// FILE NAME: OnboardingActivity.java
+// PATH: app/src/main/java/com/konnash/activities/OnboardingActivity.java
+
 package com.konnash.activities;
 
 import android.content.Intent;
@@ -8,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.konnash.R;
@@ -19,11 +23,11 @@ import java.util.List;
 
 public class OnboardingActivity extends AppCompatActivity {
 
-    private ViewPager2         viewPager;
-    private LinearLayout       layoutDots;
-    private Button             btnStart;
-    private OnboardingAdapter  adapter;
-    private List<ImageView>    dots = new ArrayList<>();
+    private ViewPager2        viewPager;
+    private LinearLayout      layoutDots;
+    private Button            btnStart;
+    private OnboardingAdapter adapter;
+    private List<ImageView>   dots = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,13 @@ public class OnboardingActivity extends AppCompatActivity {
         viewPager  = findViewById(R.id.viewpager_onboarding);
         layoutDots = findViewById(R.id.layout_dots);
         btnStart   = findViewById(R.id.btn_start);
+
+        // Fix 1 — force LTR on the internal RecyclerView inside ViewPager2
+        RecyclerView recyclerView = (RecyclerView) viewPager.getChildAt(0);
+        recyclerView.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+
+        // Fix 2 — force LTR on the dots row so dot 1 is on the left, last dot on the right
+        layoutDots.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
         List<OnboardingSlideModel> slides = buildSlides();
         adapter = new OnboardingAdapter(slides);
@@ -57,18 +68,6 @@ public class OnboardingActivity extends AppCompatActivity {
     private List<OnboardingSlideModel> buildSlides() {
         List<OnboardingSlideModel> slides = new ArrayList<>();
 
-        /*
-         * [IMAGE PLACEHOLDER]
-         * Replace each R.drawable.ic_onboarding_X with the actual drawable resource
-         * you add to res/drawable/ folder.
-         *
-         * Slide illustrations (from screenshots):
-         *   ic_onboarding_welcome  → merchant figure with wallet & calculator (Image 8)
-         *   ic_onboarding_debts    → two hands with phone showing payments   (Image 7)
-         *   ic_onboarding_clients  → phone with client list & avatars         (Image 12)
-         *   ic_onboarding_remind   → whatsapp payment reminder notification   (Image 13)
-         *   ic_onboarding_photo    → hand holding phone with receipt image    (Image 6)
-         */
         slides.add(new OnboardingSlideModel(
                 R.drawable.ic_onboarding_welcome,
                 getString(R.string.onboarding_title_1),
