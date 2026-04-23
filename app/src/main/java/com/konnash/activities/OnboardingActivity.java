@@ -99,11 +99,14 @@ public class OnboardingActivity extends AppCompatActivity {
     private void setupDots(int count) {
         dots.clear();
         layoutDots.removeAllViews();
+        float density = getResources().getDisplayMetrics().density;
+        int dotSize   = (int) (12 * density);   // 16dp
+        int margin    = (int) (8  * density);    // 8dp
         for (int i = 0; i < count; i++) {
             ImageView dot = new ImageView(this);
             LinearLayout.LayoutParams params =
-                    new LinearLayout.LayoutParams(10, 10);
-            params.setMargins(6, 0, 6, 0);
+                    new LinearLayout.LayoutParams(dotSize, dotSize);
+            params.setMargins(margin, 0, margin, 0);
             dot.setLayoutParams(params);
             dot.setImageResource(R.drawable.dot_inactive);
             dots.add(dot);
