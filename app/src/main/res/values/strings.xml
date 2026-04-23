@@ -9,6 +9,7 @@
     <string name="french">Français</string>
     <string name="turkish">Turkish</string>
     <string name="confirm">تأكيد</string>
+    <string name="language_unavailable">اللغة غير متوفرة حاليا</string>
 
     <!-- Onboarding -->
     <string name="onboarding_title_1">مرحبا بك في كناش</string>

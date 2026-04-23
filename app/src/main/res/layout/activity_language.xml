@@ -5,29 +5,26 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:padding="@dimen/screen_padding"
-    android:layoutDirection="rtl">
+    android:layoutDirection="ltr">
 
     <!-- Language icon -->
-    <!--
-        [IMAGE PLACEHOLDER]
-        Add ic_language drawable: blue speech bubble with "A" and Arabic "ض"
-        Reference screenshot: Image 5 / Image 9
-    -->
     <ImageView
         android:id="@+id/iv_language_icon"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_language_placeholder"
+        android:scaleType="fitCenter"
         android:contentDescription="language icon" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+         />
 
-    <!-- Language Grid 2x2 -->
+    <!-- Language Grid 2x2 — row1: English | Turkish, row2: Arabic | French -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,15 +36,20 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn_arabic"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_turkish"
                 style="@style/LanguageButton"
-                android:text="@string/arabic" />
+                android:stateListAnimator="@null"
+                android:foreground="@drawable/ripple_white"
+                android:text="@string/turkish"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_english"
                 style="@style/LanguageButton"
-                android:text="@string/english" />
+                android:stateListAnimator="@null"
+                android:foreground="@drawable/ripple_white"
+                android:text="@string/english"
+             />
         </LinearLayout>
 
         <LinearLayout
@@ -56,15 +58,20 @@
             android:orientation="horizontal"
             android:layout_marginTop="4dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_french"
                 style="@style/LanguageButton"
+                android:stateListAnimator="@null"
+                android:foreground="@drawable/ripple_white"
                 android:text="@string/french" />
 
-            <Button
-                android:id="@+id/btn_turkish"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_arabic"
                 style="@style/LanguageButton"
-                android:text="@string/turkish" />
+                android:stateListAnimator="@null"
+                android:foreground="@drawable/ripple_white"
+                android:text="@string/arabic" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -73,12 +80,14 @@
         android:layout_height="0dp"
         android:layout_weight="2" />
 
-    <!-- Confirm button (hidden until language selected) -->
-    <Button
+    <!-- Confirm button -->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_confirm"
         style="@style/ButtonPrimary"
+        android:stateListAnimator="@null"
         android:text="@string/confirm"
         android:visibility="gone"
+        android:foreground="@drawable/ripple_white"
         android:layout_marginBottom="16dp" />
 
 </LinearLayout>

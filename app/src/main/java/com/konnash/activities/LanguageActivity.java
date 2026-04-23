@@ -1,7 +1,6 @@
 package com.konnash.activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,13 +27,13 @@ public class LanguageActivity extends AppCompatActivity {
         btnTurkish = findViewById(R.id.btn_turkish);
         btnConfirm = findViewById(R.id.btn_confirm);
 
-        setupLanguageButton(btnArabic,  "ar");
-        setupLanguageButton(btnEnglish, "en");
-        setupLanguageButton(btnFrench,  "fr");
-        setupLanguageButton(btnTurkish, "tr");
+        setupLanguageButton(btnArabic,  "ar",  true);
+        setupLanguageButton(btnEnglish, "en",  false);
+        setupLanguageButton(btnFrench,  "fr",  false);
+        setupLanguageButton(btnTurkish, "tr",  false);
 
         btnConfirm.setOnClickListener(v -> {
-            if (selectedLanguage != null) {
+            if ("ar".equals(selectedLanguage)) {
                 PrefsManager.getInstance(this).setLanguage(selectedLanguage);
                 startActivity(new Intent(this, OnboardingActivity.class));
                 finish();
@@ -42,11 +41,19 @@ public class LanguageActivity extends AppCompatActivity {
         });
     }
 
-    private void setupLanguageButton(Button btn, String langCode) {
+    private void setupLanguageButton(Button btn, String langCode, boolean available) {
         btn.setOnClickListener(v -> {
             selectedLanguage = langCode;
             highlightSelected(btn);
             btnConfirm.setVisibility(View.VISIBLE);
+
+            if (available) {
+                btnConfirm.setText(getString(R.string.confirm));
+                btnConfirm.setAlpha(1f);
+            } else {
+                btnConfirm.setText(getString(R.string.language_unavailable));
+                btnConfirm.setAlpha(0.6f);
+            }
         });
     }
 
