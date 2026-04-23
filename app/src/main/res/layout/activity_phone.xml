@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:padding="@dimen/screen_padding"
+    android:paddingHorizontal="40dp"
+    android:paddingVertical="@dimen/screen_padding"
     android:layoutDirection="rtl">
 
     <TextView
@@ -23,84 +24,95 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="36dp"
-        android:gravity="center_vertical">
+        android:gravity="bottom">
 
-        <!-- Country flag + code -->
+        <!-- Phone Input Section (Right) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_hint"
+                android:inputType="phone"
+                android:background="@null"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:fontFamily="@font/cairo"
+                android:textAlignment="viewStart"
+                android:paddingBottom="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/primary_blue" />
+        </LinearLayout>
+
+        <!-- Space between field and country -->
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <!-- Country Section (Left) -->
         <LinearLayout
             android:id="@+id/layout_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingEnd="12dp">
+            android:orientation="vertical">
 
-            <!--
-                [IMAGE PLACEHOLDER]
-                ic_flag_dz: Algerian flag icon (32x22dp)
-                Place in res/drawable/ic_flag_dz.xml or ic_flag_dz.png
-            -->
-            <ImageView
-                android:id="@+id/iv_flag"
-                android:layout_width="32dp"
-                android:layout_height="22dp"
-                android:src="@drawable/ic_flag_placeholder"
-                android:contentDescription="flag" />
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@android:drawable/arrow_down_float"
-                android:layout_marginStart="4dp" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+213"
-                android:textSize="16sp"
-                android:textColor="@color/text_primary"
-                android:fontFamily="@font/cairo"
-                android:layout_marginStart="4dp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+213"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="@font/cairo" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@android:drawable/arrow_down_float"
+                    android:layout_marginHorizontal="4dp"
+                    android:tint="@color/text_secondary" />
+
+                <ImageView
+                    android:id="@+id/iv_flag"
+                    android:layout_width="32dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_flag_dz"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="flag" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/primary_blue" />
         </LinearLayout>
-
-        <!-- Divider -->
-        <View
-            android:layout_width="1.5dp"
-            android:layout_height="32dp"
-            android:background="@color/border" />
-
-        <!-- Phone number field -->
-        <EditText
-            android:id="@+id/et_phone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/phone_hint"
-            android:inputType="phone"
-            android:background="@null"
-            android:textSize="16sp"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/cairo"
-            android:paddingStart="12dp"
-            android:textAlignment="textEnd" />
     </LinearLayout>
-
-    <!-- Bottom underline -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:background="@color/primary_blue"
-        android:layout_marginTop="4dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/phone_desc"
-        android:textSize="14sp"
-        android:textColor="@color/text_secondary"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/cairo"
-        android:textAlignment="center"
         android:gravity="center"
-        android:layout_marginTop="24dp" />
+        android:text="@string/phone_desc"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
@@ -108,9 +120,11 @@
         android:layout_weight="1" />
 
     <!-- Continue button -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_continue"
         style="@style/ButtonPrimary"
+        android:stateListAnimator="@null"
+        android:foreground="@drawable/ripple_white"
         android:text="@string/btn_continue"
         android:layout_marginBottom="8dp" />
 
