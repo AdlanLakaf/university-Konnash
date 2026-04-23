@@ -36,8 +36,8 @@
     <color name="calc_operator_bg">#E1F3FD</color>
 
     <!-- Onboarding dots -->
-    <color name="dot_active">#2D9CDB</color>
-    <color name="dot_inactive">#C4D8EE</color>
+    <color name="dot_active">#2979FF</color>
+    <color name="dot_inactive">#C8D8F8</color>
 
     <!-- Yellow accent -->
     <color name="yellow_accent">#F2994A</color>
