@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_tag.xml — Single tag row in the tags management RecyclerView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!-- Color swatch (right in RTL = visually leftmost) -->
+    <View
+        android:id="@+id/view_tag_color"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/bg_tag_color_swatch"
+        android:layout_marginEnd="12dp" />
+
+    <!-- Tag name -->
+    <TextView
+        android:id="@+id/tv_tag_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="vip"
+        android:textSize="15sp"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/cairo_semibold" />
+
+    <!-- Checkbox / selection indicator -->
+    <CheckBox
+        android:id="@+id/cb_tag_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/primary_blue"
+        android:focusable="false"
+        android:clickable="false" />
+
+</LinearLayout>

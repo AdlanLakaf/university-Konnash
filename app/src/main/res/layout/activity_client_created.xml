@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_client_created.xml — Success / confirmation screen after adding a client -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layoutDirection="rtl">
+
+    <!-- Top bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:src="@android:drawable/ic_media_next"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_client_title"
+            android:textSize="18sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo_bold"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <!-- Center success content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="80dp">
+
+        <!--
+            [IMAGE PLACEHOLDER]
+            ic_success / ic_client_created: checkmark or celebration illustration
+            Size: 160x160dp
+        -->
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_onboarding_clients"
+            android:contentDescription="client created" />
+
+        <!-- Success title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/client_created_title"
+            android:textSize="22sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo_bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="24dp" />
+
+        <!-- Subtitle / description -->
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="@string/client_created_desc"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="@font/cairo"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="4dp" />
+
+        <!-- Go back / Done button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_done"
+            style="@style/ButtonPrimary"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/ripple_white"
+            android:text="@string/btn_done"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp" />
+
+        <!-- Add another client -->
+        <TextView
+            android:id="@+id/tv_add_another"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_add_another_client"
+            android:textSize="14sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo_semibold"
+            android:layout_marginTop="16dp"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

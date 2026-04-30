@@ -48,5 +48,32 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Add Client Entry (choice screen) -->
+        <activity
+            android:name=".activities.AddClientEntryActivity"
+            android:exported="false" />
+
+        <!-- Add Client Form -->
+        <activity
+            android:name=".activities.AddClientActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Tags Management / Selection -->
+        <activity
+            android:name=".activities.TagsActivity"
+            android:exported="false" />
+
+        <!-- Add Tag Form -->
+        <activity
+            android:name=".activities.AddTagActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Client Created Success -->
+        <activity
+            android:name=".activities.ClientCreatedActivity"
+            android:exported="false" />
+
     </application>
 </manifest>

@@ -74,4 +74,41 @@
     <!-- Error messages -->
     <string name="error_empty_amount">الرجاء إدخال مبلغ</string>
     <string name="error_invalid_phone">رقم الهاتف غير صحيح</string>
+    <string name="error_empty_name">الرجاء إدخال الاسم</string>
+
+    <!-- Credit Book -->
+    <string name="credit_book_title">دفتر الديون</string>
+    <string name="credit_book_empty_desc">أضف عملاءك وتابع ديونهم بسهولة</string>
+    <string name="total_credit">إجمالي الديون</string>
+    <string name="clients_label">العملاء</string>
+
+    <!-- Add Client -->
+    <string name="add_client_title">إضافة عميل</string>
+    <string name="btn_add_client">إضافة عميل</string>
+    <string name="btn_add_new_client">إضافة عميل جديد</string>
+    <string name="btn_import_contacts">استيراد ارقام العملاء</string>
+    <string name="import_contacts_desc">مشاركة أرقام الهاتف مع التطبيق تمكنك من إضافة\nعملاء جدد بسرعة.</string>
+    <string name="label_name">الاسم</string>
+    <string name="hint_name">الاسم</string>
+    <string name="label_phone">رقم الهاتف</string>
+    <string name="hint_phone">رقم الهاتف</string>
+    <string name="label_address">العنوان</string>
+    <string name="hint_address">العنوان</string>
+    <string name="btn_confirm_client">تأكيد</string>
+
+    <!-- Tags -->
+    <string name="label_tags">التصنيفات</string>
+    <string name="btn_add_tags">إضافة تصنيفات ⊕</string>
+    <string name="btn_manage_tags">إدارة التصنيفات ⊕</string>
+    <string name="tags_hint">استخدم تصنيفات مخصصة (مثل VIP، جملة، المنطقة) لتصنيف جهات\nالاتصال الخاصة بك للتجميع والتصفية بسرعة</string>
+    <string name="tags_page_title">إدارة التصنيفات</string>
+    <string name="btn_add_new_tag">إضافة تصنيف جديد</string>
+    <string name="tags_empty_desc">لا توجد تصنيفات، أنشئ أول تصنيف لك</string>
+    <string name="add_tag_title">إضافة تصنيف جديد</string>
+
+    <!-- Client Created -->
+    <string name="client_created_title">تم إضافة العميل بنجاح!</string>
+    <string name="client_created_desc">يمكنك الآن تسجيل الديون والمدفوعات لهذا العميل بسهولة</string>
+    <string name="btn_done">تم</string>
+    <string name="btn_add_another_client">إضافة عميل آخر</string>
 </resources>

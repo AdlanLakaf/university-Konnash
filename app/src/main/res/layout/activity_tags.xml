@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_tags.xml — Tags management screen (bottom-sheet-style activity) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layoutDirection="rtl">
+
+    <!-- Top bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Close (X) button -->
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="close"
+            android:tint="@color/text_secondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tags_page_title"
+            android:textSize="18sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo_bold"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <!-- "Add new tag" button at top -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_new_tag"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/btn_add_new_tag"
+            android:textSize="15sp"
+            android:textColor="@color/primary_blue"
+            android:fontFamily="@font/cairo_semibold"
+            android:background="@drawable/bg_button_secondary"
+            android:backgroundTint="@null"
+            android:stateListAnimator="@null"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Empty state — shown when no tags exist yet -->
+    <LinearLayout
+        android:id="@+id/ll_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="60dp"
+        android:visibility="visible">
+
+        <!--
+            [IMAGE PLACEHOLDER]
+            ic_tags_empty: 3D contacts / checklist illustration
+            Similar to the image shown in the mockup (book with checkmarks and people)
+            Size: 160x160dp
+        -->
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_onboarding_clients"
+            android:contentDescription="no tags" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tags_empty_desc"
+            android:textSize="15sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="@font/cairo"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <!-- Tags list (shown when tags exist) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tags"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>
