@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- item_client.xml — Single client row in the credit book list -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,85 +6,71 @@
     android:gravity="center_vertical"
     android:background="@color/white"
     android:layoutDirection="rtl"
-    android:paddingStart="16dp"
+    android:paddingStart="6dp"
     android:paddingEnd="16dp"
     android:paddingTop="14dp"
     android:paddingBottom="14dp">
 
-    <!-- Client info (right side in RTL) -->
+    <!-- Avatar box (rightmost) -->
+    <TextView
+        android:id="@+id/tv_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_action_icon"
+        android:textSize="18sp"
+        android:textColor="@color/primary_blue"
+        android:fontFamily="@font/cairo_bold"
+        android:gravity="center"
+        android:text="د"
+        android:layout_marginStart="12dp" />
+
+    <!-- Name + "أخذت" label (center, takes remaining space) -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="start"
+        android:layout_marginStart="8dp">
 
         <TextView
             android:id="@+id/tv_client_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="اسم العميل"
+            android:text="dnfkdk"
             android:textSize="15sp"
             android:textColor="@color/text_primary"
-            android:fontFamily="@font/cairo_semibold" />
-
-        <TextView
-            android:id="@+id/tv_client_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+213 xxxxxxxx"
-            android:textSize="13sp"
-            android:textColor="@color/text_secondary"
-            android:fontFamily="@font/cairo"
-            android:layout_marginTop="2dp" />
-
-        <!-- Tag chips (horizontal scroll) -->
-        <HorizontalScrollView
-            android:id="@+id/hsv_tags"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:layout_marginTop="6dp"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:id="@+id/ll_tags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layoutDirection="rtl" />
-
-        </HorizontalScrollView>
+            android:fontFamily="@font/cairo_semibold"
+            android:textAlignment="viewEnd" />
 
     </LinearLayout>
 
-    <!-- Debt amount (left side in RTL = visually right) -->
+    <!-- Amount (leftmost) -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="end">
+        android:gravity="start">
 
         <TextView
             android:id="@+id/tv_client_debt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0.00 د.ج."
+            android:text="0.0 د.ج."
             android:textSize="15sp"
-            android:textColor="@color/expense_red"
+            android:textColor="@color/income_green"
             android:fontFamily="@font/cairo_semibold" />
 
-        <!--
-            [IMAGE PLACEHOLDER]
-            ic_chevron_left: chevron/arrow pointing left (12dp, gray)
-        -->
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@android:drawable/arrow_up_float"
-            android:contentDescription="open"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="4dp"
-            android:tint="@color/text_secondary" />
+        <TextView
+            android:id="@+id/tv_client_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/cairo"
+            android:text="أخذت"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

@@ -37,24 +37,26 @@ public class ClientsAdapter extends RecyclerView.Adapter<ClientsAdapter.ViewHold
         Client client = clients.get(position);
 
         holder.tvName.setText(client.getName());
-        holder.tvPhone.setText(client.getPhone() != null && !client.getPhone().isEmpty()
-                ? client.getPhone()
-                : "");
+
         // Debt amount: placeholder — no transaction logic yet
         holder.tvDebt.setText("0.00 د.ج.");
+        holder.tvAvatar.setText(
+                String.valueOf(client.getName().charAt(0)).toUpperCase()
+        );
     }
 
     @Override
     public int getItemCount() { return clients.size(); }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvPhone, tvDebt;
+        TextView tvName, tvDebt, tvAvatar;
 
         ViewHolder(View itemView) {
             super(itemView);
             tvName  = itemView.findViewById(R.id.tv_client_name);
-            tvPhone = itemView.findViewById(R.id.tv_client_phone);
             tvDebt  = itemView.findViewById(R.id.tv_client_debt);
+            tvAvatar = itemView.findViewById(R.id.tv_avatar);
+
         }
     }
 }

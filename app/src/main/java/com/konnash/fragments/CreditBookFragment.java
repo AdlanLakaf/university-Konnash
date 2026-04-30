@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.konnash.R;
+import com.konnash.activities.AddClientActivity;
 import com.konnash.activities.AddClientEntryActivity;
 import com.konnash.adapters.ClientsAdapter;
 import com.konnash.database.DatabaseHelper;
@@ -46,15 +49,19 @@ public class CreditBookFragment extends Fragment {
         rvClients.setLayoutManager(new LinearLayoutManager(requireContext()));
         rvClients.setAdapter(adapter);
 
-        // Add client button in header
-        view.findViewById(R.id.btn_add_client_header).setOnClickListener(v -> {
-            startActivity(new Intent(requireContext(), AddClientEntryActivity.class));
-        });
+        // FAB replaces the old header button
+        view.findViewById(R.id.fab_add_client).setOnClickListener(v ->
+                startActivity(new Intent(requireContext(), AddClientActivity.class))
+        );
 
-        // Back button
-        view.findViewById(R.id.btn_back).setOnClickListener(v -> {
-            if (getActivity() != null) getActivity().onBackPressed();
-        });
+//        // Search
+//        ((EditText) view.findViewById(R.id.et_search)).addTextChangedListener(new android.text.TextWatcher() {
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                adapter.filter(s.toString());
+//            }
+//            public void afterTextChanged(android.text.Editable s) {}
+//        });
 
         loadClients();
     }
@@ -69,5 +76,9 @@ public class CreditBookFragment extends Fragment {
         clientList.clear();
         clientList.addAll(DatabaseHelper.getInstance(requireContext()).getAllClients());
         adapter.notifyDataSetChanged();
+
+        // Update count label
+        TextView tvCount = getView() == null ? null : getView().findViewById(R.id.tv_clients_count);
+        if (tvCount != null) tvCount.setText("العملاء (" + clientList.size() + ")");
     }
 }

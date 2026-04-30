@@ -1,6 +1,7 @@
 package com.konnash.activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,11 +19,25 @@ import com.konnash.models.Tag;
 public class AddTagActivity extends AppCompatActivity {
 
     private EditText etTagName;
+    private String selectedColor = "#9B59B6"; // default
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_tag);
+
+        View colorSwatch = findViewById(R.id.view_color_swatch);
+        colorSwatch.setBackgroundColor(android.graphics.Color.parseColor(selectedColor));
+
+        colorSwatch.setOnClickListener(v -> {
+            ColorPickerBottomSheet sheet = new ColorPickerBottomSheet();
+            sheet.setOnColorSelectedListener(hex -> {
+                selectedColor = hex;
+                colorSwatch.setBackgroundColor(android.graphics.Color.parseColor(hex));
+            });
+            sheet.show(getSupportFragmentManager(), "color_picker");
+        });
+
 
         etTagName = findViewById(R.id.et_tag_name);
 

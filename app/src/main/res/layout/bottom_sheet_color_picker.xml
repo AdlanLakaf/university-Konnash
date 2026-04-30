@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="اختر اللون"
+        android:textSize="16sp"
+        android:textColor="@color/primary_blue"
+        android:fontFamily="@font/cairo_bold"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Color grid -->
+    <GridLayout
+        android:id="@+id/grid_colors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Cancel button -->
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="إلغاء"
+        android:textSize="15sp"
+        android:textColor="@color/primary_blue"
+        android:fontFamily="@font/cairo_semibold"
+        android:gravity="center"
+        android:background="@color/primary_blue_light"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>

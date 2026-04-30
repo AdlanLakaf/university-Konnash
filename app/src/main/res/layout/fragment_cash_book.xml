@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@color/white"
+        android:layout_marginTop="10dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
@@ -25,34 +26,34 @@
 
             <ImageButton
                 android:id="@+id/btn_youtube_main"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/share_icon"
                 android:background="@drawable/bg_quick_action"
                 android:scaleType="centerInside"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="share" />
 
             <ImageButton
                 android:id="@+id/btn_hide"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/hide_icon"
                 android:background="@drawable/bg_quick_action"
                 android:scaleType="centerInside"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="hide balance" />
 
             <ImageButton
                 android:id="@+id/btn_share_main"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/youtube"
                 android:background="@drawable/bg_quick_action"
                 android:scaleType="centerInside"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:contentDescription="youtube" />
 
         </LinearLayout>
