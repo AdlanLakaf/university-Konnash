@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- activity_client_created.xml — Success / confirmation screen after adding a client -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,92 +16,287 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:background="@null"
-            android:src="@android:drawable/ic_media_next"
-            android:layout_alignParentEnd="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_previous"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:contentDescription="back" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_client_title"
-            android:textSize="18sp"
-            android:textColor="@color/primary_blue"
-            android:fontFamily="@font/cairo_bold"
-            android:layout_centerInParent="true" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/tv_client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/primary_blue"
+                android:fontFamily="@font/cairo_bold"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اضغط هنا لمعلومات الاتصال"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/cairo"
+                android:textAlignment="center" />
+        </LinearLayout>
 
     </RelativeLayout>
 
-    <!-- Center success content -->
-    <LinearLayout
+    <!-- Scrollable content -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingBottom="80dp">
+        android:fillViewport="true"
+        android:overScrollMode="never">
 
-        <!--
-            [IMAGE PLACEHOLDER]
-            ic_success / ic_client_created: checkmark or celebration illustration
-            Size: 160x160dp
-        -->
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/ic_onboarding_clients"
-            android:contentDescription="client created" />
-
-        <!-- Success title -->
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/client_created_title"
-            android:textSize="22sp"
-            android:textColor="@color/primary_blue"
-            android:fontFamily="@font/cairo_bold"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_marginTop="24dp" />
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp">
 
-        <!-- Subtitle / description -->
-        <TextView
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:text="@string/client_created_desc"
-            android:textSize="14sp"
-            android:textColor="@color/text_secondary"
-            android:fontFamily="@font/cairo"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_marginTop="12dp"
-            android:lineSpacingExtra="4dp" />
+            <!-- Balance Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
 
-        <!-- Go back / Done button -->
+                <!-- gravity="end" pushes the column to the RIGHT side -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="start">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_semibold"
+                        android:text="الرصيد"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="‎0.0 د.ج."
+                        android:textSize="32sp"
+                        android:textColor="@color/income_green"
+                        android:fontFamily="@font/cairo_bold"
+                        android:layout_marginTop="4dp"
+                        android:textAlignment="viewStart" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Action Buttons Row — RTL mirrored: ملاحظة | اتصل | مشاركة | تقرير -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_marginTop="20dp">
+
+                <!-- ملاحظة — rightmost in RTL -->
+                <LinearLayout
+                    android:id="@+id/btn_note"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_action_icon"
+                        android:src="@drawable/note_icon"
+                        android:padding="12dp"
+                        android:contentDescription="note" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ملاحظة"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="@font/cairo"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- اتصل -->
+                <LinearLayout
+                    android:id="@+id/btn_call"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_action_icon"
+                        android:src="@drawable/call_icon"
+                        android:padding="12dp"
+                        android:contentDescription="call" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="اتصل"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="@font/cairo"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- مشاركة -->
+                <LinearLayout
+                    android:id="@+id/btn_share"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_action_icon"
+                        android:src="@drawable/share2_icon"
+                        android:padding="12dp"
+                        android:contentDescription="share" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="مشاركة"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="@font/cairo"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- تقرير — leftmost in RTL -->
+                <LinearLayout
+                    android:id="@+id/btn_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_action_icon"
+                        android:src="@drawable/analytics_icon"
+                        android:padding="12dp"
+                        android:contentDescription="report" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تقرير"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="@font/cairo"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Transactions Header — pinned to the RIGHT via layout_gravity + marginEnd -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="معاملات (٠)"
+                android:textSize="16sp"
+                android:textColor="@color/primary_blue"
+                android:fontFamily="@font/cairo_bold"
+                android:layout_gravity="start"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Empty state -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="48dp"
+                android:paddingBottom="48dp">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/client_created_page_image_1"
+                    android:contentDescription="no transactions" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="لا توجد أي معاملة"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="@font/cairo"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom buttons with gap between them -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/white">
+
+        <!-- أخذت — green, on the RIGHT (START in RTL) -->
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_done"
-            style="@style/ButtonPrimary"
+            android:id="@+id/btn_took"
+            style="@style/ButtonIncome"
             android:stateListAnimator="@null"
-            android:foreground="@drawable/ripple_white"
-            android:text="@string/btn_done"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp" />
+            android:text="أخذت"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="6dp" />
 
-        <!-- Add another client -->
-        <TextView
-            android:id="@+id/tv_add_another"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_add_another_client"
-            android:textSize="14sp"
-            android:textColor="@color/primary_blue"
-            android:fontFamily="@font/cairo_semibold"
-            android:layout_marginTop="16dp"
-            android:padding="8dp" />
+        <!-- أعطيت — red, on the LEFT (END in RTL) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_gave"
+            style="@style/ButtonExpense"
+            android:stateListAnimator="@null"
+            android:text="أعطيت"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="0dp" />
 
     </LinearLayout>
 
