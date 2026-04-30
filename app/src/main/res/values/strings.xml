@@ -78,13 +78,14 @@
 
     <!-- Credit Book -->
     <string name="credit_book_title">دفتر الديون</string>
-    <string name="credit_book_empty_desc">أضف عملاءك وتابع ديونهم بسهولة</string>
+    <string name="credit_book_empty_desc">هنا يمكنك تسجيل جميع العملاء و الموردين بسهولة</string>
     <string name="total_credit">إجمالي الديون</string>
     <string name="clients_label">العملاء</string>
 
     <!-- Add Client -->
     <string name="add_client_title">إضافة عميل</string>
     <string name="btn_add_client">إضافة عميل</string>
+    <string name="btn_add_supplier">إضافة مورد</string>
     <string name="btn_add_new_client">إضافة عميل جديد</string>
     <string name="btn_import_contacts">استيراد ارقام العملاء</string>
     <string name="import_contacts_desc">مشاركة أرقام الهاتف مع التطبيق تمكنك من إضافة\nعملاء جدد بسرعة.</string>

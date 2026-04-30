@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,14 +31,14 @@ public class CreditBookIntroFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Back
-        view.findViewById(R.id.btn_back).setOnClickListener(v -> {
-            if (getActivity() != null) getActivity().onBackPressed();
-        });
-
         // Add Client → entry screen
         view.findViewById(R.id.btn_add_client_intro).setOnClickListener(v -> {
             startActivity(new Intent(requireContext(), AddClientEntryActivity.class));
+        });
+
+        // Add Supplier → coming soon toast
+        view.findViewById(R.id.btn_add_supplier_intro).setOnClickListener(v -> {
+            Toast.makeText(requireContext(), "قيد التطوير", Toast.LENGTH_SHORT).show();
         });
     }
 }
