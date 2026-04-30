@@ -91,18 +91,20 @@
             android:id="@+id/iv_credit_empty"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:src="@drawable/ic_onboarding_clients"
+            android:src="@drawable/credit_book_page_image_1"
             android:contentDescription="empty credit book" />
 
         <TextView
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/credit_book_empty_desc"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textColor="@color/text_secondary"
             android:fontFamily="@font/cairo"
             android:textAlignment="center"
             android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             android:layout_marginTop="20dp" />
 
         <!-- 👇 pointing hand emoji -->
