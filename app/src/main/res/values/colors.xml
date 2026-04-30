@@ -41,4 +41,8 @@
 
     <!-- Yellow accent -->
     <color name="yellow_accent">#F2994A</color>
+
+    <!-- Blue accent -->
+    <color name="blue_accent">#0000FF</color>
+
 </resources>
