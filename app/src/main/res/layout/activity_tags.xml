@@ -81,7 +81,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/ic_onboarding_clients"
+            android:src="@drawable/tag_managment_page_image_1"
             android:contentDescription="no tags" />
 
         <TextView
