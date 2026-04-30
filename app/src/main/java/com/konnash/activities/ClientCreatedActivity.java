@@ -6,7 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.konnash.R;
-
+import android.widget.TextView;
 /**
  * Client created success screen.
  * UI only — no business logic.
@@ -23,21 +23,25 @@ public class ClientCreatedActivity extends AppCompatActivity {
         // Back arrow
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 
-        // Done — go back to credit book (clear the add-client stack)
-        findViewById(R.id.btn_done).setOnClickListener(v -> {
-            // Navigate back to MainActivity (credit book tab)
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-            finish();
-        });
-
-        // Add another client
-        findViewById(R.id.tv_add_another).setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddClientEntryActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        });
+        String clientName = getIntent().getStringExtra("client_name");
+        if (clientName != null) {
+            ((TextView) findViewById(R.id.tv_client_name)).setText(clientName);
+        }
+//        // Done — go back to credit book (clear the add-client stack)
+//        findViewById(R.id.btn_done).setOnClickListener(v -> {
+//            // Navigate back to MainActivity (credit book tab)
+//            Intent intent = new Intent(this, MainActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//            startActivity(intent);
+//            finish();
+//        });
+//
+//        // Add another client
+//        findViewById(R.id.tv_add_another).setOnClickListener(v -> {
+//            Intent intent = new Intent(this, AddClientEntryActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            startActivity(intent);
+//            finish();
+//        });
     }
 }
