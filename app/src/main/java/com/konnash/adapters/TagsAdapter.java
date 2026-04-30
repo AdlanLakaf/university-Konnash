@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.konnash.R;
@@ -54,7 +55,6 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         try {
             int color = Color.parseColor(tag.getColor());
             holder.badgeLayout.setBackgroundColor(color);
-            // Use white text for visibility on colored background
             holder.tvName.setTextColor(Color.WHITE);
         } catch (Exception e) {
             holder.badgeLayout.setBackgroundResource(R.drawable.bg_name_badge);
@@ -65,8 +65,16 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
             holder.cbSelected.setVisibility(View.VISIBLE);
             holder.cbSelected.setChecked(selectedIds.contains(tag.getId()));
 
+            // FIX #2: Make checkbox non-clickable so only the row drives selection,
+            // preventing the checkbox from consuming the event and double-toggling.
+            holder.cbSelected.setClickable(false);
+            holder.cbSelected.setFocusable(false);
+
+            // FIX #1: Re-fetch tag via adapterPosition to avoid stale captured reference.
             holder.itemView.setOnClickListener(v -> {
-                long id = tag.getId();
+                int pos = holder.getAdapterPosition();
+                if (pos == RecyclerView.NO_ID) return;
+                long id = tags.get(pos).getId();
                 if (selectedIds.contains(id)) {
                     selectedIds.remove(id);
                     holder.cbSelected.setChecked(false);
@@ -75,10 +83,26 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
                     holder.cbSelected.setChecked(true);
                 }
             });
+
+            holder.itemView.setOnLongClickListener(null);
+
         } else {
             holder.cbSelected.setVisibility(View.GONE);
+            holder.itemView.setOnClickListener(null);
+
+            // FIX #3: Show confirmation dialog before deleting.
             holder.itemView.setOnLongClickListener(v -> {
-                if (deleteListener != null) deleteListener.onDelete(tag);
+                int pos = holder.getAdapterPosition();
+                if (pos == RecyclerView.NO_ID) return true;
+                Tag t = tags.get(pos);
+                new AlertDialog.Builder(v.getContext())
+                        .setTitle(R.string.delete_tag_title)
+                        .setMessage(v.getContext().getString(R.string.delete_tag_message, t.getName()))
+                        .setPositiveButton(R.string.delete, (dialog, which) -> {
+                            if (deleteListener != null) deleteListener.onDelete(t);
+                        })
+                        .setNegativeButton(R.string.cancel, null)
+                        .show();
                 return true;
             });
         }

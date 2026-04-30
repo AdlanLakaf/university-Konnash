@@ -2,8 +2,12 @@ package com.konnash.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,11 +34,13 @@ import java.util.Set;
  */
 public class TagsActivity extends AppCompatActivity {
 
-    public static final String EXTRA_SELECTION_MODE  = "selection_mode";
-    public static final String EXTRA_SELECTED_IDS    = "selected_ids";
-    public static final String RESULT_SELECTED_IDS   = "result_ids";
-    public static final String RESULT_SELECTED_NAMES = "result_names";
-    public static final String RESULT_SELECTED_COLORS= "result_colors";
+    private static final String TAG = "TagsActivity";
+
+    public static final String EXTRA_SELECTION_MODE   = "selection_mode";
+    public static final String EXTRA_SELECTED_IDS     = "selected_ids";
+    public static final String RESULT_SELECTED_IDS    = "result_ids";
+    public static final String RESULT_SELECTED_NAMES  = "result_names";
+    public static final String RESULT_SELECTED_COLORS = "result_colors";
 
     private View            llEmptyState;
     private RecyclerView    rvTags;
@@ -46,16 +52,20 @@ public class TagsActivity extends AppCompatActivity {
 
     private boolean selectionMode = false;
 
+    // FIX #4: Replace deprecated startActivityForResult / onActivityResult.
+    private final ActivityResultLauncher<Intent> addTagLauncher =
+            registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+                        if (result.getResultCode() == RESULT_OK) {
+                            loadTags();
+                        }
+                    });
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tags);
-
-        AppCompatButton btn = findViewById(R.id.btn_confirm);
-
-        btn.setOnClickListener(v -> {
-            finishWithResult();
-        });
 
         selectionMode = getIntent().getBooleanExtra(EXTRA_SELECTION_MODE, false);
 
@@ -66,6 +76,11 @@ public class TagsActivity extends AppCompatActivity {
         llEmptyState = findViewById(R.id.ll_empty_state);
         rvTags       = findViewById(R.id.rv_tags);
 
+        // FIX #6: Show confirm button only in selection mode.
+        AppCompatButton btnConfirm = findViewById(R.id.btn_confirm);
+        btnConfirm.setVisibility(selectionMode ? View.VISIBLE : View.GONE);
+        btnConfirm.setOnClickListener(v -> finishWithResult());
+
         // Setup RecyclerView
         adapter = new TagsAdapter(tagList, selectionMode, preSelectedIds, this::onTagDeleted);
         rvTags.setLayoutManager(new LinearLayoutManager(this));
@@ -75,25 +90,18 @@ public class TagsActivity extends AppCompatActivity {
         findViewById(R.id.btn_close).setOnClickListener(v -> finishWithResult());
 
         // Add new tag button
-        findViewById(R.id.btn_add_new_tag).setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddTagActivity.class);
-            startActivityForResult(intent, 1002);
+        findViewById(R.id.btn_add_new_tag).setOnClickListener(v ->
+                addTagLauncher.launch(new Intent(this, AddTagActivity.class)));
+
+        // FIX #5: Replace deprecated onBackPressed override.
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finishWithResult();
+            }
         });
 
         loadTags();
-    }
-
-    @Override
-    public void onBackPressed() {
-        finishWithResult();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1002 && resultCode == RESULT_OK) {
-            loadTags(); // refresh after adding a tag
-        }
     }
 
     private void loadTags() {
@@ -123,6 +131,15 @@ public class TagsActivity extends AppCompatActivity {
             List<Tag> selectedTags = new ArrayList<>();
             for (Tag t : tagList) {
                 if (selectedIds.contains(t.getId())) selectedTags.add(t);
+            }
+
+            // FIX #7: Log any orphan pre-selected ids that no longer exist in tagList.
+            Set<Long> resolvedIds = new HashSet<>();
+            for (Tag t : selectedTags) resolvedIds.add(t.getId());
+            for (long id : selectedIds) {
+                if (!resolvedIds.contains(id)) {
+                    Log.w(TAG, "Pre-selected tag id=" + id + " not found in tagList — was it deleted?");
+                }
             }
 
             long[]   ids    = new long[selectedTags.size()];

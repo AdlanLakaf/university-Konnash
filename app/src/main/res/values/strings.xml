@@ -105,6 +105,10 @@
     <string name="btn_add_new_tag">إضافة تصنيف جديد</string>
     <string name="tags_empty_desc">لا توجد تصنيفات، أنشئ أول تصنيف لك</string>
     <string name="add_tag_title">إضافة تصنيف جديد</string>
+    <string name="delete_tag_title">Delete Tag</string>
+    <string name="delete_tag_message">Delete "%s"?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Client Created -->
     <string name="client_created_title">تم إضافة العميل بنجاح!</string>
