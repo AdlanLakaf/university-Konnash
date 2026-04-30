@@ -152,6 +152,7 @@ public class AddClientActivity extends AppCompatActivity {
 
         // Navigate to success screen
         Intent intent = new Intent(this, ClientCreatedActivity.class);
+        intent.putExtra("client_name", name); // ← add this line
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
