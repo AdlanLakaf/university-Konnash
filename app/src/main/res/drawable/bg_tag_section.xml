@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="@color/white" />
-    <stroke android:width="1.5dp" android:color="@color/border" />
-    <corners android:radius="10dp" />
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color -->
+    <solid android:color="@android:color/white"/>
+
+    <!-- Border (stroke) -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/primary_blue_light"/>
+
+    <!-- Corner radius -->
+    <corners android:radius="10dp"/>
+
+    <!-- Optional padding inside background -->
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp"/>
 </shape>

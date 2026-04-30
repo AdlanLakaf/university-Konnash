@@ -16,11 +16,12 @@
         <!-- Back / forward arrow (end = left in RTL) -->
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:background="@null"
-            android:src="@android:drawable/ic_media_next"
-            android:layout_alignParentEnd="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_previous"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:contentDescription="back" />
 
@@ -73,7 +74,7 @@
                 android:textColorHint="@color/text_hint"
                 android:fontFamily="@font/cairo"
                 android:gravity="center_vertical|end"
-                android:textAlignment="viewEnd"
+                android:textAlignment="viewStart"
                 android:inputType="textPersonName"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp" />
@@ -108,30 +109,23 @@
                     android:textColor="@color/text_primary"
                     android:textColorHint="@color/text_hint"
                     android:fontFamily="@font/cairo"
-                    android:gravity="center_vertical|end"
-                    android:textAlignment="viewEnd"
+                    android:gravity="start|center_vertical"
+                    android:textAlignment="viewStart"
                     android:inputType="phone"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:layout_marginStart="8dp" />
+                    android:paddingEnd="12dp" />
 
                 <!-- Country code box -->
                 <LinearLayout
                     android:id="@+id/layout_country_code"
+                    android:layout_marginStart="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center"
                     android:background="@drawable/bg_input_field"
                     android:paddingStart="8dp"
-                    android:paddingEnd="8dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/ic_flag_dz"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="flag" />
+                    android:paddingEnd="25dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -141,6 +135,14 @@
                         android:textColor="@color/text_primary"
                         android:fontFamily="@font/cairo"
                         android:layout_marginStart="4dp" />
+
+                    <ImageView
+                        android:paddingRight="5dp"
+                        android:layout_width="28dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_flag_dz"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="flag" />
 
                 </LinearLayout>
 
@@ -162,7 +164,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                >
 
                 <!-- Address input -->
                 <EditText
@@ -176,24 +179,15 @@
                     android:textColor="@color/text_primary"
                     android:textColorHint="@color/text_hint"
                     android:fontFamily="@font/cairo"
-                    android:gravity="center_vertical|end"
-                    android:textAlignment="viewEnd"
+                    android:gravity="start|center_vertical"
+                    android:textAlignment="viewStart"
                     android:inputType="textPostalAddress"
                     android:paddingStart="12dp"
-                    android:paddingEnd="12dp" />
+                    android:paddingEnd="-15dp"
+                    android:drawableEnd="@drawable/ic_next"
+                    android:drawablePadding="8dp"
+                    />
 
-                <!-- Location picker icon -->
-                <ImageButton
-                    android:id="@+id/btn_pick_location"
-                    android:layout_width="52dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_input_field"
-                    android:src="@android:drawable/ic_menu_directions"
-                    android:scaleType="centerInside"
-                    android:padding="12dp"
-                    android:layout_marginStart="8dp"
-                    android:contentDescription="pick location"
-                    android:tint="@color/primary_blue" />
 
             </LinearLayout>
 
@@ -216,10 +210,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/label_tags"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textColor="@color/primary_blue"
                         android:fontFamily="@font/cairo_semibold"
-                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentStart="true"
                         android:layout_centerVertical="true" />
 
                     <!-- Manage tags button -->
@@ -232,19 +226,9 @@
                         android:background="@drawable/bg_tag_chip"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true">
 
-                        <!--
-                            [IMAGE PLACEHOLDER]
-                            ic_plus_circle: circle + icon (16dp, blue)
-                        -->
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_plus_placeholder"
-                            android:contentDescription="add tag"
-                            android:layout_marginEnd="4dp" />
 
                         <TextView
                             android:id="@+id/tv_manage_tags_label"
@@ -284,10 +268,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tags_hint"
                     android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/text_hint"
                     android:fontFamily="@font/cairo"
-                    android:gravity="center"
-                    android:textAlignment="center"
+                    android:gravity="center_vertical"
                     android:layout_marginTop="8dp" />
 
             </LinearLayout>
