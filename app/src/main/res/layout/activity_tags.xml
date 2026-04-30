@@ -69,7 +69,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:gravity="center"
-        android:paddingBottom="400dp"
+        android:paddingBottom="350dp"
         android:visibility="visible">
 
         <!--
@@ -87,13 +87,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tags_empty_desc"
-            android:textSize="15sp"
-            android:textColor="@color/text_hint"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/cairo"
-            android:textAlignment="center"
             android:gravity="center"
-            android:layout_marginTop="16dp" />
+            android:text="@string/tags_empty_desc"
+            android:textAlignment="center"
+            android:textColor="@color/text_hint"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -109,5 +109,14 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:visibility="gone" />
+
+    <!-- Confirm button pinned at bottom -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_confirm"
+        style="@style/ButtonPrimary"
+        android:stateListAnimator="@null"
+        android:foreground="@drawable/ripple_white"
+        android:text="@string/btn_confirm"
+        android:layout_margin="16dp" />
 
 </LinearLayout>

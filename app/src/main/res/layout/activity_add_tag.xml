@@ -11,20 +11,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:paddingStart="16dp"
+        android:paddingStart="18dp"
         android:paddingEnd="16dp">
 
-        <!-- Close (X) -->
+        <!-- Close (X) button -->
         <ImageButton
             android:id="@+id/btn_close"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:background="@null"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:scaleType="fitCenter"
+            android:src="@drawable/blue_cross"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:contentDescription="close"
-            android:tint="@color/text_secondary" />
+            android:contentDescription="close" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,29 +65,31 @@
             android:gravity="center_vertical">
 
             <!-- Tag name input -->
+
+            <!-- Color swatch (placeholder square) -->
             <EditText
                 android:id="@+id/et_tag_name"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
                 android:layout_weight="1"
-                android:hint="@string/hint_name"
                 android:background="@drawable/bg_input_field"
-                android:textSize="15sp"
-                android:textColor="@color/text_primary"
-                android:textColorHint="@color/text_hint"
                 android:fontFamily="@font/cairo"
-                android:gravity="center_vertical|end"
-                android:textAlignment="viewEnd"
+                android:gravity="start|center_vertical"
+                android:hint="@string/hint_name"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:layout_marginStart="12dp" />
+                android:textAlignment="viewStart"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textSize="15sp" />
 
-            <!-- Color swatch (placeholder square) -->
             <View
                 android:id="@+id/view_color_swatch"
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_tag_color_swatch" />
+                android:background="@drawable/bg_tag_color_swatch"
+                android:layout_marginStart="5dp" />
 
         </LinearLayout>
 

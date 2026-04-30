@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,9 +24,9 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         void onDelete(Tag tag);
     }
 
-    private final List<Tag>          tags;
-    private final boolean            selectionMode;
-    private final Set<Long>          selectedIds = new HashSet<>();
+    private final List<Tag>           tags;
+    private final boolean             selectionMode;
+    private final Set<Long>           selectedIds = new HashSet<>();
     private final OnTagDeleteListener deleteListener;
 
     public TagsAdapter(List<Tag> tags, boolean selectionMode, Set<Long> preSelectedIds, OnTagDeleteListener deleteListener) {
@@ -49,15 +50,18 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
 
         holder.tvName.setText(tag.getName());
 
-        // Set swatch color
+        // Apply tag color to badge background
         try {
-            holder.colorSwatch.setBackgroundColor(Color.parseColor(tag.getColor()));
+            int color = Color.parseColor(tag.getColor());
+            holder.badgeLayout.setBackgroundColor(color);
+            // Use white text for visibility on colored background
+            holder.tvName.setTextColor(Color.WHITE);
         } catch (Exception e) {
-            holder.colorSwatch.setBackgroundResource(R.drawable.bg_tag_color_swatch);
+            holder.badgeLayout.setBackgroundResource(R.drawable.bg_name_badge);
+            holder.tvName.setTextColor(Color.parseColor("#7FA8D4"));
         }
 
         if (selectionMode) {
-            // Show checkbox; hide delete
             holder.cbSelected.setVisibility(View.VISIBLE);
             holder.cbSelected.setChecked(selectedIds.contains(tag.getId()));
 
@@ -72,7 +76,6 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
                 }
             });
         } else {
-            // Management mode: long-press to delete
             holder.cbSelected.setVisibility(View.GONE);
             holder.itemView.setOnLongClickListener(v -> {
                 if (deleteListener != null) deleteListener.onDelete(tag);
@@ -84,17 +87,16 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
     @Override
     public int getItemCount() { return tags.size(); }
 
-    /** Returns the set of currently selected tag ids (selection mode). */
     public Set<Long> getSelectedIds() { return selectedIds; }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        View     colorSwatch;
-        TextView tvName;
-        CheckBox cbSelected;
+        LinearLayout badgeLayout;
+        TextView     tvName;
+        CheckBox     cbSelected;
 
         ViewHolder(View itemView) {
             super(itemView);
-            colorSwatch = itemView.findViewById(R.id.view_tag_color);
+            badgeLayout = itemView.findViewById(R.id.badge_layout);
             tvName      = itemView.findViewById(R.id.tv_tag_name);
             cbSelected  = itemView.findViewById(R.id.cb_tag_selected);
         }

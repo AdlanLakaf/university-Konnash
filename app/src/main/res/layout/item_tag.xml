@@ -1,41 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- item_tag.xml — Single tag row in the tags management RecyclerView -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:background="@color/white"
-    android:layoutDirection="rtl"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#FFFFFF">
 
-    <!-- Color swatch (right in RTL = visually leftmost) -->
-    <View
-        android:id="@+id/view_tag_color"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:background="@drawable/bg_tag_color_swatch"
-        android:layout_marginEnd="12dp" />
-
-    <!-- Tag name -->
-    <TextView
-        android:id="@+id/tv_tag_name"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="vip"
-        android:textSize="15sp"
-        android:textColor="@color/text_primary"
-        android:fontFamily="@font/cairo_semibold" />
+        android:orientation="vertical"
+        android:paddingVertical="12dp">
 
-    <!-- Checkbox / selection indicator -->
-    <CheckBox
-        android:id="@+id/cb_tag_selected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@color/primary_blue"
-        android:focusable="false"
-        android:clickable="false" />
+        <!-- Top Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="-1dp">
+            <!-- Checkbox as avatar slot -->
 
-</LinearLayout>
+            <CheckBox
+                android:id="@+id/cb_tag_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/primary_blue"
+                android:scaleX="1.3"
+                android:scaleY="1.3" />
+
+            <!-- Tag name badge with color swatch -->
+
+            <LinearLayout
+                android:id="@+id/badge_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_name_badge"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:id="@+id/tv_tag_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:text="vip"
+                    android:textColor="#7FA8D4"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btn_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:src="@drawable/ic_more_vert"
+                android:tint="#5B8FD4" />
+
+        </LinearLayout>
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="4dp"
+            android:text="0 عميل • 0 مورد"
+            android:textSize="13sp"
+            android:textColor="@color/text_hint"
+            android:layoutDirection="rtl" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#E8F0F8" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

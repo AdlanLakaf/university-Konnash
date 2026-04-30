@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,6 +50,12 @@ public class TagsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tags);
+
+        AppCompatButton btn = findViewById(R.id.btn_confirm);
+
+        btn.setOnClickListener(v -> {
+            finishWithResult();
+        });
 
         selectionMode = getIntent().getBooleanExtra(EXTRA_SELECTION_MODE, false);
 
